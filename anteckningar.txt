@@ -1,0 +1,18 @@
+Läs in bilder med följande:
+>> pkg load image
+>> matrix = imread("filename");
+>> img = rgb2gray(img);
+>> img = mat2gray(img); % this is the shit
+>> img = double(img);
+
+
+>> save filname matrix;
+
+Standardbilder från: http://sipi.usc.edu/database/
+
+Dela upp i R,G,B genom img(:,:,1), img(:,:,2) och img(:,:,3).
+Ändra till double (im2double()) för att kunna komprimera.
+Använd im2uint8(img) för att konvertera till uint8 och sedan tillbaka till double.
+Annars kan avrundningen ge värden större än 1.
+
+Använd imwrite(img, "filnamn") för att spara bilderna utan extra ram.

@@ -1,0 +1,55 @@
+>> img = imread("standard pictures/kodim23.png");
+>> img = im2double(img);
+>> compressed = compressRGB(img,0.75);
+Compression factor: 75%
+Elapsed time is 22.3027 seconds.
+Compression factor: 75%
+Elapsed time is 22.585 seconds.
+Compression factor: 75%
+Elapsed time is 22.3596 seconds.
+>> diff = img - compressed;
+>> norms = [norm(diff(:,:,1),1), norm(diff(:,:,2),1), norm(diff(:,:,3),1)]
+norms =
+
+   7.7529   7.2431   7.5686
+
+>> compressed = compressRGB(img,0.9);
+Compression factor: 90%
+Elapsed time is 26.6084 seconds.
+Compression factor: 90%
+Elapsed time is 27.1804 seconds.
+Compression factor: 90%
+Elapsed time is 26.9065 seconds.
+>> diff = img - compressed;
+>> norms = [norm(diff(:,:,1),1), norm(diff(:,:,2),1), norm(diff(:,:,3),1)]
+norms =
+
+   17.290   16.043   14.537
+
+>> compressed = compressRGB(img,0.95);
+Compression factor: 95%
+Elapsed time is 31.0323 seconds.
+Compression factor: 95%
+Elapsed time is 28.3445 seconds.
+Compression factor: 95%
+Elapsed time is 28.3901 seconds.
+>> diff = img - compressed;
+>> norms = [norm(diff(:,:,1),1), norm(diff(:,:,2),1), norm(diff(:,:,3),1)]
+norms =
+
+   28.094   31.412   26.859
+
+>> compressed = compressRGB(img,0.99);
+Compression factor: 99%
+Elapsed time is 29.4032 seconds.
+Compression factor: 99%
+Elapsed time is 29.4803 seconds.
+Compression factor: 99%
+Elapsed time is 29.2736 seconds.
+>> diff = img - compressed;
+>> norms = [norm(diff(:,:,1),1), norm(diff(:,:,2),1), norm(diff(:,:,3),1)]
+norms =
+
+   86.298   79.275   87.447
+
+>> diary off

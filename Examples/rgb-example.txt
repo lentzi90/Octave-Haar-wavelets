@@ -1,0 +1,5 @@
+>> img = imread("standard pictures/kodim23.png");
+>> img = im2double(img);
+>> imgr = img(:,:,1); imgg = img(:,:,2); imgb = img(:,:,3);
+>> imgr = zeros(size(img)); imgg = zeros(size(img)); imgb = zeros(size(img));
+>> imgr(:,:,1) = img(:,:,1); imgg(:,:,2) = img(:,:,2); imgb(:,:,3) = img(:,:,3);

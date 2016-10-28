@@ -1,0 +1,23 @@
+>> img = imread("capo2.jpg");
+>> img = im2double(img);
+>> compressed = compressRGB(img,0.5);
+>> diff = img - compressed;
+>> norms = [norm(diff(:,:,1),2), norm(diff(:,:,2),2), norm(diff(:,:,3),2)]
+norms =
+
+   7.9374   8.0036   6.8613
+
+>> compressed = compressRGB(img,0.75);
+>> diff = img - compressed;
+>> norms = [norm(diff(:,:,1),2), norm(diff(:,:,2),2), norm(diff(:,:,3),2)]
+norms =
+
+   15.401   14.962   15.409
+
+>> compressed = compressRGB(img,0.90);
+>> diff = img - compressed;
+>> norms = [norm(diff(:,:,1),2), norm(diff(:,:,2),2), norm(diff(:,:,3),2)]
+norms =
+
+   26.556   30.446   32.341
+

@@ -1,0 +1,30 @@
+>> img = imread("standard pictures/kodim23.png");
+>> img = im2double(img);
+>> compressed = compressRGB(img,0.75);
+>> diff = img - compressed;
+>> norms = [norm(diff(:,:,1),2), norm(diff(:,:,2),2), norm(diff(:,:,3),2)]
+norms =
+
+   2.5573   2.6435   2.7655
+
+>> compressed = compressRGB(img,0.9);
+>> diff = img - compressed;
+>> norms = [norm(diff(:,:,1),2), norm(diff(:,:,2),2), norm(diff(:,:,3),2)]
+norms =
+
+   6.2288   5.8670   6.2970
+
+>> compressed = compressRGB(img,0.95);
+>> diff = img - compressed;
+>> norms = [norm(diff(:,:,1),2), norm(diff(:,:,2),2), norm(diff(:,:,3),2)]
+norms =
+
+   12.945   15.130   12.955
+
+>> compressed = compressRGB(img,0.99);
+>> diff = img - compressed;
+>> norms = [norm(diff(:,:,1),2), norm(diff(:,:,2),2), norm(diff(:,:,3),2)]
+norms =
+
+   37.222   39.067   43.071
+

@@ -1,0 +1,12 @@
+>> [retur, medel, detalj] = wave(B,1)
+retur =
+
+   3  -1   5   0
+
+medel =
+
+   3   5
+
+detalj =
+
+  -1   0

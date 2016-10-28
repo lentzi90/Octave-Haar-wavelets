@@ -1,0 +1,43 @@
+>> img = imread("capo2.jpg");
+warning: your version of GraphicsMagick limits images to 8 bits per pixel
+>> img = im2double(img);
+>> compressed = compressRGB(img,0.5);
+Compression factor: 50%
+Elapsed time is 12.8611 seconds.
+Compression factor: 50%
+Elapsed time is 12.8403 seconds.
+Compression factor: 50%
+Elapsed time is 12.9531 seconds.
+>> diff = img - compressed;
+>> norms = [norm(diff(:,:,1),1), norm(diff(:,:,2),1), norm(diff(:,:,3),1)]
+norms =
+
+   19.984   19.549   19.424
+
+>> compressed = compressRGB(img,0.75);
+Compression factor: 75%
+Elapsed time is 19.3037 seconds.
+Compression factor: 75%
+Elapsed time is 19.3294 seconds.
+Compression factor: 75%
+Elapsed time is 19.6289 seconds.
+>> diff = img - compressed;
+>> norms = [norm(diff(:,:,1),1), norm(diff(:,:,2),1), norm(diff(:,:,3),1)]
+norms =
+
+   40.918   35.118   41.188
+
+>> compressed = compressRGB(img,0.9);
+Compression factor: 90%
+Elapsed time is 23.186 seconds.
+Compression factor: 90%
+Elapsed time is 23.0988 seconds.
+Compression factor: 90%
+Elapsed time is 23.2242 seconds.
+>> diff = img - compressed;
+>> norms = [norm(diff(:,:,1),1), norm(diff(:,:,2),1), norm(diff(:,:,3),1)]
+norms =
+
+   58.596   61.820   64.741
+
+>> diary off

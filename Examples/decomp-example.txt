@@ -1,0 +1,10 @@
+>> img = imread("standard pictures/papegojor.tiff");
+>> img = im2double(img);
+>> imshow(img);
+>> ex = ceil(log(columns(img))/log(2));
+>> paddingSide = zeros(rows(img), pow2(ex) - columns(img));
+>> img = [img, paddingSide];
+>> imshow(img);
+>> [decomposed, appr, detail] = decompose(img);
+>> decomposed = decomposed(:,1:end-columns(paddingSide));
+>> imshow(1-abs(decomposed).*15);

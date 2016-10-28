@@ -1,0 +1,10 @@
+>> num = log(rows(decomposed))/log(2);
+>> decomposed(1,:) = 0;
+>> compressed = compress(decomposed, 0.9);
+Compression factor: 90%
+Elapsed time is 26.8026 seconds.
+>> compressed(1,:) = appr;
+>> spy(compressed(:,1:end-columns(paddingSide)));
+>> recomposed = recompose(compressed);
+>> recomposed = recomposed(:,1:end-columns(paddingSide));
+>> imshow(recomposed);
